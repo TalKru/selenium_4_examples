@@ -22,8 +22,8 @@ if __name__ == '__main__':
     driver.get(WEB_URL)
 
     locator_tuple = (By.XPATH, "//button[@onclick='jsConfirm()']")
-    alert_btn_2 = wait.until(EC.element_to_be_clickable(locator_tuple))
-    alert_btn_2.click()  # open alert window
+    alert_btn = wait.until(EC.element_to_be_clickable(locator_tuple))
+    alert_btn.click()  # open alert window
 
     ##################################################################################################
     """

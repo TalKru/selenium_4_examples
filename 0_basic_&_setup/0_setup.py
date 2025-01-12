@@ -34,12 +34,14 @@ if __name__ == '__main__':
 
     driver.get(WEB_URL)
 
-    locator_tuple = (By.ID, 'start-date')
-    element = wait.until(EC.element_to_be_clickable(locator_tuple))
+    # ---------------------------------------------------------------------
+    # locator_tuple = (By.ID, 'start-date')
+    # element = wait.until(EC.element_to_be_clickable(locator_tuple))
+    # ActionChains(driver).move_to_element(element).click().perform()
+    # ---------------------------------------------------------------------
 
-    ActionChains(driver).move_to_element(element).click().perform()
-
-    #element.click()
+    element = driver.find_element(By.ID, 'start-date')
+    element.click()
 
     ### YOUR CODE
 

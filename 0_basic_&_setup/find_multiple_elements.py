@@ -21,12 +21,14 @@ if __name__ == '__main__':
 
     # find all the classes:
     class_list = driver.find_elements(By.CLASS_NAME, class_ident)
+
     print(f'amount of classes found: {len(class_list)}')
-    for classs in class_list:
-        print(classs.text)
+    for classes in class_list:
+        print(classes.text)
 
     # find all the links:
     links_list = driver.find_elements(By.TAG_NAME, 'a')
+
     print(f'amount of links found: {len(links_list)}')
     print('links:')
     for link in links_list:

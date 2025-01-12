@@ -23,10 +23,20 @@ if __name__ == '__main__':
     driver.get(WEB_URL)
 
     locator_tuple = (By.XPATH, "//button[@onclick='jsPrompt()']")
-    alert_btn_3 = wait.until(EC.element_to_be_clickable(locator_tuple))
-    alert_btn_3.click()  # open alert window
+    alert_btn = wait.until(EC.element_to_be_clickable(locator_tuple))
+    alert_btn.click()  # open alert window
 
     """
+    +--------------------------+
+    |          Alert           |
+    +--------------------------+
+    |                          |
+    |    Enter your name:      |
+    |    [______________]      |
+    |                          |
+    |   [ OK ]    [ Cancel ]   |
+    +--------------------------+
+
     NOTE: Alert window is NOT a web element so when it pops you 
     cannot handle it the usual way (click ok or cancel).
     we cannot inspect it and identify element on it.
@@ -47,7 +57,7 @@ if __name__ == '__main__':
     # how to click on the popup/alert window options: OK / Cancel
     # NOTE: choose one option! comment out the other
     alert_window.accept()   # to choose OK
-    alert_window.dismiss()  # to choose Cancel
+    #alert_window.dismiss()  # to choose Cancel
 
     # locate the element that displays on the page the text we sent to the alert
     result_txt = driver.find_element(By.ID, 'result').text
