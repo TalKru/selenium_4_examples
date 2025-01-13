@@ -23,9 +23,12 @@ WAIT_TIME_SEC = 10
 if __name__ == '__main__':
     chrome_options = Options()
     chrome_options.add_argument("--start-maximized")
+    chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--ignore-certificate-errors")
     chrome_options.add_argument("--incognito")
+    # chrome_options.add_argument("--headless=new")
+    # chrome_options.add_argument("--headless")
 
     driver = webdriver.Chrome(options=chrome_options)
 
