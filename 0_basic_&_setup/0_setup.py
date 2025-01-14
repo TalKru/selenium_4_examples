@@ -7,6 +7,7 @@ https://testautomationpractice.blogspot.com/
 https://testautomationpractice.blogspot.com/
 http://www.deadlinkcity.com/
 https://formstone.it/components/dropdown/demo/
+https://www.dummyticket.com/dummy-ticket-for-visa-application/
 """
 
 from selenium import webdriver
