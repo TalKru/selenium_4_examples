@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains, Keys
 import time
 
-WEB_URL = 'https://testautomationpractice.blogspot.com/'
+WEB_URL = ''
 WAIT_TIME_SEC = 10
 
 if __name__ == '__main__':
