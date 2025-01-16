@@ -16,7 +16,7 @@ if __name__ == '__main__':
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_argument("--incognito")
+    chrome_options.add_argument("--incognito")  # will mess up file downloads
     # chrome_options.add_argument("--headless=new")
     # chrome_options.add_argument("--headless")
 

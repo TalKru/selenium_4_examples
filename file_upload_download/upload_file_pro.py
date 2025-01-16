@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 TIMEOUT_SEC = 20
 WEB_URL = 'https://the-internet.herokuapp.com/upload'
-FILENAME = 'selenium-snapshot.png'
+FILENAME = 'image_file_test.jpg'
 
 
 def get_driver():
@@ -30,9 +30,12 @@ def get_file_path(file_name: str) -> str:
     Construct and validate the absolute path of the file to upload.
     """
     file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), file_name))
+
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
+
     print(f"Resolved file path: {file_path}")
+
     return file_path
 
 
@@ -40,17 +43,14 @@ def upload_file(driver, file_path: str):
     """
     Perform the file upload operation on the target web page.
     """
-    # Open the target URL
     driver.get(WEB_URL)
 
-    # Wait for and interact with the file input
     upload_btn_locator = (By.ID, "file-upload")
     choose_file_btn = WebDriverWait(driver, TIMEOUT_SEC).until(
         EC.element_to_be_clickable(upload_btn_locator)
     )
     choose_file_btn.send_keys(file_path)
 
-    # Wait for and click the upload button
     upload_btn = WebDriverWait(driver, TIMEOUT_SEC).until(
         EC.element_to_be_clickable((By.ID, "file-submit"))
     )
@@ -71,16 +71,14 @@ def validate_upload(driver, expected_file_name: str):
 
 
 def main():
-    """
-    Main function to execute the file upload and validation process.
-    Includes error handling with exception logging and screenshot capture.
-    """
     file_path = get_file_path(FILENAME)
     driver = get_driver()
 
     try:
         upload_file(driver, file_path)
         validate_upload(driver, FILENAME)
+        time.sleep(4)
+
     except Exception as e:
         # Log the exception details
         print("An error occurred during execution:")
@@ -90,9 +88,8 @@ def main():
         screenshot_path = os.path.join(os.path.dirname(__file__), "error_screenshot.png")
         driver.save_screenshot(screenshot_path)
         print(f"Screenshot saved at: {screenshot_path}")
+
     finally:
-        # Ensure the WebDriver quits properly
-        time.sleep(5)
         driver.quit()
 
 
