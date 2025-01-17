@@ -20,7 +20,9 @@ if __name__ == '__main__':
 
     email_box = driver.find_element(By.ID, 'Email')
     time.sleep(2)
+    # ------------------------------------------------
     email_box.clear()  # clear the default text
+    # ------------------------------------------------
     time.sleep(1)
     email_box.send_keys("tal.is.cool@mail.com")
     time.sleep(2)

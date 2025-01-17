@@ -1,0 +1,6 @@
+
+Options().add_argument("--start-maximized"): Doesn't apply to headless mode,
+but for headless scenarios, you can set specific window sizes with --window-size=<width>,<height>.
+
+driver.maximize_window(): Has no effect in headless mode.
+
