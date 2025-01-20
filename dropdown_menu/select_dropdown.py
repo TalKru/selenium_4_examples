@@ -1,12 +1,3 @@
-"""
-QA special websites for sample testing automation
-https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-https://demo.nopcommerce.com/
-https://admin-demo.nopcommerce.com/login
-https://testautomationpractice.blogspot.com/
-https://testautomationpractice.blogspot.com/
-http://www.deadlinkcity.com/
-"""
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
