@@ -2,12 +2,14 @@ import os
 import openpyxl
 from openpyxl.styles import PatternFill  # Import for coloring cells
 
-# ------------------------------------------------------------------------------------
+
 def fill_cell_color(file_path: str, sheet_name: str, row: int, col: int, color: str):
     colors = {
-        'red': PatternFill(start_color="FFCCCC", end_color="FFCCCC", fill_type="solid"),  # Light red
+        'red': PatternFill(start_color="ff0000", end_color="ff0000", fill_type="solid"),
+        'light_red': PatternFill(start_color="FFCCCC", end_color="FFCCCC", fill_type="solid"),  # Light red
         'blue': PatternFill(start_color="99CCFF", end_color="99CCFF", fill_type="solid"),  # Light blue
-        'green': PatternFill(start_color="CCFFCC", end_color="CCFFCC", fill_type="solid"),  # Light green
+        'light_green': PatternFill(start_color="CCFFCC", end_color="CCFFCC", fill_type="solid"),  # Light green
+        'green': PatternFill(start_color="60b212", end_color="60b212", fill_type="solid"),
         'yellow': PatternFill(start_color="FFFF99", end_color="FFFF99", fill_type="solid"),  # Light yellow
         'Grey': PatternFill(start_color="CCCCCC", end_color="CCCCCC", fill_type="solid"),  # Grey
         'purple': PatternFill(start_color="E6CCFF", end_color="E6CCFF", fill_type="solid")  # Light purple
